@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{27C002F6-CBA7-4AEF-85A9-60E09CC8472C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{962AC7E9-59BA-4374-ACE2-3BDDDECB5382}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pathology.Services.PatientAPI", "Pathology.Services.PatientAPI\Pathology.Services.PatientAPI.csproj", "{753771A9-70E0-4FFC-9AB2-701179919BB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{753771A9-70E0-4FFC-9AB2-701179919BB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{753771A9-70E0-4FFC-9AB2-701179919BB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{753771A9-70E0-4FFC-9AB2-701179919BB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{753771A9-70E0-4FFC-9AB2-701179919BB3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{753771A9-70E0-4FFC-9AB2-701179919BB3} = {962AC7E9-59BA-4374-ACE2-3BDDDECB5382}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E3CF280F-3BD4-45EC-9E70-E35809B2D1AB}
+	EndGlobalSection
+EndGlobal
