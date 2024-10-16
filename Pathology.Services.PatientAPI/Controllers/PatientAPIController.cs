@@ -63,8 +63,8 @@ namespace Pathology.Services.PatientAPI.Controllers
 
         }
         [HttpGet]
-        [Route("GetByCode/{test}")]
-        public ResponseDto GetByCode(string test)
+        [Route("GetByTest/{test}")]
+        public ResponseDto GetByTest(string test)
         {
             try
             {

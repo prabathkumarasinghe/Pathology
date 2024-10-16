@@ -1,7 +1,20 @@
+using Pathology.Web.Service;
+using Pathology.Web.Service.IService;
+using Pathology.Web.Utility;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddHttpClient();
+builder.Services.AddHttpClient<IPatientService, PatientService>();
+
+SD.PatientAPIBase = builder.Configuration["ServiceUrls:PatientAPI"];
+
+builder.Services.AddScoped<IBaseService, BaseService>();
+builder.Services.AddScoped<IPatientService, PatientService>();
+
 
 var app = builder.Build();
 
