@@ -7,7 +7,7 @@ using Pathology.Services.PatientAPI.Models.Dto;
 
 namespace Pathology.Services.PatientAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/patient")]
     [ApiController]
     public class PatientAPIController : ControllerBase
     {

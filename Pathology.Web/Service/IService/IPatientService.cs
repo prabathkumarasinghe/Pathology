@@ -4,12 +4,12 @@ namespace Pathology.Web.Service.IService
 {
     public interface IPatientService
     {
-        Task<ResponseDto?> GetCouponAsync(string couponCode);
-        Task<ResponseDto?> GetAllCouponsAsync();
-        Task<ResponseDto?> GetCouponByIdAsync(int id);
-        Task<ResponseDto?> GetCouponByNameAsync(string name);
-        Task<ResponseDto?> CreateCouponsAsync(PatientDto couponDto);
-        Task<ResponseDto?> UpdateCouponsAsync(PatientDto couponDto);
-        Task<ResponseDto?> DeleteCouponsAsync(int id);
+        Task<ResponseDto?> GetPatientByTestAsync(string test);
+        Task<ResponseDto?> GetAllPatientAsync();
+        Task<ResponseDto?> GetPatientByNumberAsync(int number);
+        Task<ResponseDto?> GetPatientByNameAsync(string name);
+        Task<ResponseDto?> CreatePatientAsync(PatientDto patientDto);
+        Task<ResponseDto?> UpdatePatientAsync(PatientDto patientDto);
+        Task<ResponseDto?> DeletePatientAsync(int id);
     }
 }

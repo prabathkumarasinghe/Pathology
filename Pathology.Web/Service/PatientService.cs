@@ -14,7 +14,7 @@ namespace Pathology.Web.Service
             _baseService = baseService;
         }
 
-        public async Task<ResponseDto?> CreateCouponsAsync(PatientDto patientDto)
+        public async Task<ResponseDto?> CreatePatientAsync(PatientDto patientDto)
         {
             return await _baseService.SendAsync(new RequestDto()
             {
@@ -24,7 +24,7 @@ namespace Pathology.Web.Service
             });
         }
 
-        public async Task<ResponseDto?> DeleteCouponsAsync(int id)
+        public async Task<ResponseDto?> DeletePatientAsync(int id)
         {
             return await _baseService.SendAsync(new RequestDto()
             {
@@ -33,7 +33,7 @@ namespace Pathology.Web.Service
             });
         }
 
-        public async Task<ResponseDto?> GetAllCouponsAsync()
+        public async Task<ResponseDto?> GetAllPatientAsync()
         {
             return await _baseService.SendAsync(new RequestDto()
             {
@@ -42,7 +42,7 @@ namespace Pathology.Web.Service
             });
         }
 
-        public async Task<ResponseDto?> GetCouponAsync(string test)
+        public async Task<ResponseDto?> GetPatientByTestAsync(string test)
         {
             return await _baseService.SendAsync(new RequestDto()
             {
@@ -51,15 +51,15 @@ namespace Pathology.Web.Service
             });
         }
 
-        public async Task<ResponseDto?> GetCouponByIdAsync(int id)
+        public async Task<ResponseDto?> GetPatientByNumberAsync(int number)
         {
             return await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = SD.ApiType.GET,
-                Url = SD.PatientAPIBase + "/api/patient/" + id
+                Url = SD.PatientAPIBase + "/api/patient/" + number
             });
         }
-         public async Task<ResponseDto?> GetCouponByNameAsync(string name)
+         public async Task<ResponseDto?> GetPatientByNameAsync(string name)
         {
              return await _baseService.SendAsync(new RequestDto()
             {
@@ -68,7 +68,7 @@ namespace Pathology.Web.Service
             });
          }
         
-        public async Task<ResponseDto?> UpdateCouponsAsync(PatientDto patientDto)
+        public async Task<ResponseDto?> UpdatePatientAsync(PatientDto patientDto)
         {
             return await _baseService.SendAsync(new RequestDto()
             {
@@ -77,5 +77,7 @@ namespace Pathology.Web.Service
                 Url = SD.PatientAPIBase + "/api/patient"
             });
         }
+
+       
     }
 }

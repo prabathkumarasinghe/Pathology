@@ -1,0 +1,72 @@
+﻿@model PatientDto
+
+<form asp-action="PatientCreate">
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-white text-center">Create Patient</h1>
+
+        <hr />
+        <div class="row">
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;"> Ref Number</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="RefNumber" class="form-control" />
+                <span asp-validation-for="RefNumber" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Lab Number</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="LabNumber" class="form-control" />
+                <span asp-validation-for="LabNumber" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Patient Name</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="PatientName" class="form-control" />
+                <span asp-validation-for="PatientName" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;"> Age</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="Age" class="form-control" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Sex</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="Sex" class="form-control" />
+                <span asp-validation-for="Sex" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Test Type</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="TestType" class="form-control" />
+                <span asp-validation-for="TestType" class="text-danger"></span>
+            </div>
+
+            <div class="col-5 offset-2">
+
+                <a asp-action="CouponIndex" class="btn-primary btn form-control ">Back to List</a>
+            </div>
+            <div class="col-5">
+                <input type="submit" value="Create" class="btn btn-success form-control" />
+
+            </div>
+
+        </div>
+
+        <div>
+        </div>
+    </div>
+</form>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
