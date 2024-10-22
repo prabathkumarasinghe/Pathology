@@ -69,8 +69,9 @@
 							@item.CreatedDate
 						</td>
 						<td>
-							<a asp-action="PatientDelete" asp-route-couponId="@item.PatientNumber" class="btn btn-danger">
-								<i class="bi bi-view-list"></i>
+							<a asp-action="PatientUpdate" asp-route-patientId="@item.PatientNumber" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>
+							<a asp-action="PatientDelete" asp-route-patientId="@item.PatientNumber" class="btn btn-danger">
+								<i class="bi bi-trash"></i>
 							</a>
 						</td>
 					</tr>

@@ -11,5 +11,11 @@
             DELETE
 
         }
+
+        public enum TEST
+        {
+            FBC,
+            LFT
+        }
     }
 }

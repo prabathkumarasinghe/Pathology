@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Pathology.Web.Models;
 using Pathology.Web.Service;
 using Pathology.Web.Service.IService;
+using Pathology.Web.Utility;
 
 namespace Pathology.Web.Controllers
 {
@@ -43,17 +45,17 @@ namespace Pathology.Web.Controllers
 
                 if (response != null && response.IsSuccess)
                 {
-                    TempData["success"] = "Coupon created successfully";
+                    //TempData["success"] = "Coupon created successfully";
                     return RedirectToAction(nameof(PatientIndex));
                 }
-                else
-                {
-                    TempData["error"] = response?.Message;
-                }
+                //else
+                //{
+                //    TempData["error"] = response?.Message;
+                //}
             }
             return View(model);
         }
-        public async Task<IActionResult> CouponDelete(int patientId)
+        public async Task<IActionResult> PatientDelete(int patientId)
         {
             ResponseDto? response = await _patientService.GetPatientByNumberAsync(patientId);
 
@@ -66,9 +68,9 @@ namespace Pathology.Web.Controllers
             return NotFound();
         }
         [HttpPost]
-        public async Task<IActionResult> CouponDelete(PatientDto couponDto)
+        public async Task<IActionResult> PatientDelete(PatientDto patientDto)
         {
-            ResponseDto? response = await _patientService.DeletePatientAsync(couponDto.PatientNumber);
+            ResponseDto? response = await _patientService.DeletePatientAsync(patientDto.PatientNumber);
 
             if (response != null && response.IsSuccess)
             {
@@ -76,7 +78,45 @@ namespace Pathology.Web.Controllers
                 return RedirectToAction(nameof(PatientIndex));
             }
 
-            return View(couponDto);
+            return View(patientDto);
+        }
+        public async Task<IActionResult> PatientUpdate(int patientId)
+        {
+            ResponseDto? response = await _patientService.GetPatientByNumberAsync(patientId);
+
+            if (response != null && response.IsSuccess)
+            {
+                PatientDto? model = JsonConvert.DeserializeObject<PatientDto>(Convert.ToString(response.Result));
+                return View(model);
+            }
+
+            return NotFound();
+        }
+        
+        [HttpPost]
+       
+        public async Task<IActionResult> UpdateVilla(PatientDto model)
+        {
+            //if (ModelState.IsValid)
+            //{
+              //  TempData["success"] = "Villa updated successfully";
+                //var response = await _villaService.UpdateAsync<APIResponse>(model, HttpContext.Session.GetString(SD.SessionToken));
+                //if (response != null && response.IsSuccess)
+                //{
+                //    return RedirectToAction(nameof(IndexVilla));
+                //}
+                ResponseDto? response = await _patientService.UpdatePatientAsync(model);
+
+                if (response != null && response.IsSuccess)
+                {
+
+                    return RedirectToAction(nameof(PatientIndex));
+                }
+
+                return View(model);
+            //}
+           // TempData["error"] = "Error encountered.";
+            return View(model);
         }
     }
 }

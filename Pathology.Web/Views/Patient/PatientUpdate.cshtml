@@ -1,9 +1,10 @@
 ﻿@model PatientDto
 
-<form asp-action="PatientCreate">
+<form asp-action="PatientUpdate">
     <br />
     <div class="container border p-3">
-        <h1 class="text-white text-center">Create Patient</h1>
+        <h1 class="text-white text-center">Update Patient</h1>
+        <input asp-for="PatientNumber" hidden />
 
         <hr />
         <div class="row">
@@ -46,25 +47,25 @@
                 <label class="control-label pt-2" style="font-size:20px;">Test Type</label>
             </div>
             <div class="col-10 pb-3">
-                <select asp-for="TestType" class="form-select" >
+                <select asp-for="TestType" class="form-select">
                     <option disabled selected>--Select Test--</option>
-                    <option >FBS</option>
-                    <option >PPBS</option>
-                    <option >OGTT-2 Sample</option>
-                    <option >OGTT-3 Sample</option>
-                    <option >BSS</option>
-                    <option >OGCT 1 Hr After 50g Glucode</option>
-                    <option >OGCT 2 Hr After 75g Glucode</option>
-                    <option >HB</option>
-                    <option >FBC</option>
-                    <option >WBC DC</option>
-                    <option >ESR</option>
-                    <option >UFR</option>
-                    <option >Creatinine (GFR)</option>
-                    <option >Blood Urea</option>
-                    <option >S.Electrolyte</option>
-                    <option >CGOT (ALT)</option>
-                    <option >CGOT (ALT)</option>
+                    <option>FBS</option>
+                    <option>PPBS</option>
+                    <option>OGTT-2 Sample</option>
+                    <option>OGTT-3 Sample</option>
+                    <option>BSS</option>
+                    <option>OGCT 1 Hr After 50g Glucode</option>
+                    <option>OGCT 2 Hr After 75g Glucode</option>
+                    <option>HB</option>
+                    <option>FBC</option>
+                    <option>WBC DC</option>
+                    <option>ESR</option>
+                    <option>UFR</option>
+                    <option>Creatinine (GFR)</option>
+                    <option>Blood Urea</option>
+                    <option>S.Electrolyte</option>
+                    <option>CGOT (ALT)</option>
+                    <option>CGOT (ALT)</option>
                 </select>
                 <span asp-validation-for="TestType" class="text-danger"></span>
             </div>
@@ -74,7 +75,7 @@
                 <a asp-action="PatientIndex" class="btn-primary btn form-control ">Back to List</a>
             </div>
             <div class="col-5">
-                <input type="submit" value="Create" class="btn btn-success form-control" />
+                <input type="submit" value="Update" class="btn btn-success form-control" />
 
             </div>
 
