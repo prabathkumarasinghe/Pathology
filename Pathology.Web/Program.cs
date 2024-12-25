@@ -1,6 +1,9 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Pathology.Web.Service;
 using Pathology.Web.Service.IService;
 using Pathology.Web.Utility;
+using Web.Web.Service;
+using Web.Web.Service.IService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,11 +12,24 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient();
 builder.Services.AddHttpClient<IPatientService, PatientService>();
+builder.Services.AddHttpClient<IAuthService, AuthService>();
+
 
 SD.PatientAPIBase = builder.Configuration["ServiceUrls:PatientAPI"];
+SD.AuthAPIBase = builder.Configuration["ServiceUrls:AuthAPI"];
 
 builder.Services.AddScoped<IBaseService, BaseService>();
+builder.Services.AddScoped<ITokenProvider, TokenProvider>();
 builder.Services.AddScoped<IPatientService, PatientService>();
+builder.Services.AddScoped<ITokenProvider, TokenProvider>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.ExpireTimeSpan = TimeSpan.FromHours(10);
+        options.LoginPath = "/Auth/Login";
+        options.AccessDeniedPath = "/Auth/AccessDenied";
+    });
 
 
 var app = builder.Build();
@@ -30,7 +46,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
