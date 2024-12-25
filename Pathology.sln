@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pathology.Web", "Pathology.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pathology.Services.TestAPI", "Pathology.Services.ProductAPI\Pathology.Services.TestAPI.csproj", "{2D993E74-7A4A-46F1-9CDF-B263B0EC1361}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pathology.Services.AuthAPI", "Pathology.Services.AuthAPI\Pathology.Services.AuthAPI.csproj", "{2FB6C067-1297-427D-A3F1-183356556542}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{2D993E74-7A4A-46F1-9CDF-B263B0EC1361}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D993E74-7A4A-46F1-9CDF-B263B0EC1361}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D993E74-7A4A-46F1-9CDF-B263B0EC1361}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FB6C067-1297-427D-A3F1-183356556542}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FB6C067-1297-427D-A3F1-183356556542}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FB6C067-1297-427D-A3F1-183356556542}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FB6C067-1297-427D-A3F1-183356556542}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{753771A9-70E0-4FFC-9AB2-701179919BB3} = {962AC7E9-59BA-4374-ACE2-3BDDDECB5382}
 		{FF5D4A6F-3CD8-4F0E-B68B-11B782DD3263} = {27C002F6-CBA7-4AEF-85A9-60E09CC8472C}
 		{2D993E74-7A4A-46F1-9CDF-B263B0EC1361} = {962AC7E9-59BA-4374-ACE2-3BDDDECB5382}
+		{2FB6C067-1297-427D-A3F1-183356556542} = {962AC7E9-59BA-4374-ACE2-3BDDDECB5382}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E3CF280F-3BD4-45EC-9E70-E35809B2D1AB}
