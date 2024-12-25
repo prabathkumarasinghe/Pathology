@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Pathology.Web.Models;
-using Pathology.Web.Service;
 using Pathology.Web.Service.IService;
 using Pathology.Web.Utility;
 

@@ -9,9 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{96
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pathology.Services.PatientAPI", "Pathology.Services.PatientAPI\Pathology.Services.PatientAPI.csproj", "{753771A9-70E0-4FFC-9AB2-701179919BB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pathology.Web", "Pathology.Web\Pathology.Web.csproj", "{FF5D4A6F-3CD8-4F0E-B68B-11B782DD3263}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pathology.Web", "Pathology.Web\Pathology.Web.csproj", "{FF5D4A6F-3CD8-4F0E-B68B-11B782DD3263}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pathology.Services.ProductAPI", "Pathology.Services.ProductAPI\Pathology.Services.ProductAPI.csproj", "{2D993E74-7A4A-46F1-9CDF-B263B0EC1361}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pathology.Services.TestAPI", "Pathology.Services.ProductAPI\Pathology.Services.TestAPI.csproj", "{2D993E74-7A4A-46F1-9CDF-B263B0EC1361}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
