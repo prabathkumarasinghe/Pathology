@@ -3,29 +3,26 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Pathology.Services.PatientAPI.Data;
+using Pathology.Services.PatientsAPI.Data;
 
 #nullable disable
 
-namespace Pathology.Services.PatientAPI.Migrations
+namespace Pathology.Services.PatientsAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241008103604_AddPatientsToDb")]
-    partial class AddPatientsToDb
+    partial class AppDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.8")
+                .HasAnnotation("ProductVersion", "9.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Pathology.Services.PatientAPI.Models.Patient", b =>
+            modelBuilder.Entity("Pathology.Services.PatientsAPI.Models.Patient", b =>
                 {
                     b.Property<int>("PatientNumber")
                         .ValueGeneratedOnAdd()
@@ -60,6 +57,30 @@ namespace Pathology.Services.PatientAPI.Migrations
                     b.HasKey("PatientNumber");
 
                     b.ToTable("patients");
+
+                    b.HasData(
+                        new
+                        {
+                            PatientNumber = 1,
+                            Age = 10,
+                            CreatedDate = new DateTime(2024, 12, 28, 2, 38, 50, 779, DateTimeKind.Local).AddTicks(1161),
+                            LabNumber = 2390,
+                            PatientName = "Nimal",
+                            RefNumber = 1212,
+                            Sex = "male",
+                            TestType = "FBC"
+                        },
+                        new
+                        {
+                            PatientNumber = 2,
+                            Age = 12,
+                            CreatedDate = new DateTime(2024, 12, 28, 2, 38, 50, 779, DateTimeKind.Local).AddTicks(5606),
+                            LabNumber = 412,
+                            PatientName = "Nimala",
+                            RefNumber = 1099,
+                            Sex = "Female",
+                            TestType = "Suger"
+                        });
                 });
 #pragma warning restore 612, 618
         }

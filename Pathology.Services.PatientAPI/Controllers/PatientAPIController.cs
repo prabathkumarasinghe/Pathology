@@ -1,169 +1,169 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Pathology.Services.PatientAPI.Data;
-using Pathology.Services.PatientAPI.Models;
-using Pathology.Services.PatientAPI.Models.Dto;
+﻿//using AutoMapper;
+//using Microsoft.AspNetCore.Http;
+//using Microsoft.AspNetCore.Mvc;
+//using Pathology.Services.PatientAPI.Data;
+//using Pathology.Services.PatientAPI.Models;
+//using Pathology.Services.PatientAPI.Models.Dto;
 
-namespace Pathology.Services.PatientAPI.Controllers
-{
-    [Route("api/patient")]
-    [ApiController]
-    public class PatientAPIController : ControllerBase
-    {
-        private readonly AppDbContext _db;
-        private ResponseDto _response;
-        private IMapper _mapper; 
+//namespace Pathology.Services.PatientAPI.Controllers
+//{
+//    [Route("api/patient")]
+//    [ApiController]
+//    public class PatientAPIController : ControllerBase
+//    {
+//        private readonly AppDbContext _db;
+//        private ResponseDto _response;
+//        private IMapper _mapper; 
 
-        public PatientAPIController(AppDbContext db, IMapper mapper)
-        {
-            _db = db;
-            _response   = new ResponseDto();
-            _mapper = mapper;
+//        public PatientAPIController(AppDbContext db, IMapper mapper)
+//        {
+//            _db = db;
+//            _response   = new ResponseDto();
+//            _mapper = mapper;
 
-        }
+//        }
 
-        [HttpGet]
-        public ResponseDto Get()
-        {
-            try
-            {
-                IEnumerable<Patient> objList = _db.patients.ToList();
-                _response.Result = _mapper.Map<IEnumerable<PatientDto>>(objList);
+//        [HttpGet]
+//        public ResponseDto Get()
+//        {
+//            try
+//            {
+//                IEnumerable<Patient> objList = _db.patient.ToList();
+//                _response.Result = _mapper.Map<IEnumerable<PatientDto>>(objList);
                 
-            }
+//            }
 
-            catch (Exception ex)
-            {
-                _response.IsSuccess = false;
-                _response.Message = ex.Message;
+//            catch (Exception ex)
+//            {
+//                _response.IsSuccess = false;
+//                _response.Message = ex.Message;
 
-            }
-            return _response;
-
-
-        }
-        [HttpGet]
-        [Route("{id:int}")]
-        public object Get(int id)
-        {
-            try
-            {
-                Patient obj = _db.patients.First(u=>u.PatientNumber==id);
-                _response.Result = _mapper.Map<PatientDto>(obj);
-            }
-
-            catch (Exception ex)
-            {
-                _response.IsSuccess = false;
-                _response.Message = ex.Message;
-            }
-            return _response;
+//            }
+//            return _response;
 
 
-        }
-        [HttpGet]
-        [Route("GetByTest/{test}")]
-        public ResponseDto GetByTest(string test)
-        {
-            try
-            {
-                Patient obj = _db.patients.First(u => u.TestType.ToLower() == test.ToLower());
-                _response.Result = _mapper.Map<PatientDto>(obj);
-            }
+//        }
+//        [HttpGet]
+//        [Route("{id:int}")]
+//        public object Get(int id)
+//        {
+//            try
+//            {
+//                Patient obj = _db.patient.First(u=>u.PatientNumber==id);
+//                _response.Result = _mapper.Map<PatientDto>(obj);
+//            }
 
-            catch (Exception ex)
-            {
-                _response.IsSuccess = false;
-                _response.Message = ex.Message;
-            }
-            return _response;
-
-
-        }
-        [HttpGet]
-        [Route("GetByName/{name}")]
-        public ResponseDto GetByName(string name)
-        {
-            try
-            {
-                Patient obj = _db.patients.First(u => u.PatientName.ToLower() == name.ToLower());
-                _response.Result = _mapper.Map<PatientDto>(obj);
-            }
-
-            catch (Exception ex)
-            {
-                _response.IsSuccess = false;
-                _response.Message = ex.Message;
-            }
-            return _response;
+//            catch (Exception ex)
+//            {
+//                _response.IsSuccess = false;
+//                _response.Message = ex.Message;
+//            }
+//            return _response;
 
 
-        }
+//        }
+//        [HttpGet]
+//        [Route("GetByTest/{test}")]
+//        public ResponseDto GetByTest(string test)
+//        {
+//            try
+//            {
+//                Patient obj = _db.patient.First(u => u.TestType.ToLower() == test.ToLower());
+//                _response.Result = _mapper.Map<PatientDto>(obj);
+//            }
 
-        [HttpPost]       
-        public ResponseDto Post([FromBody] PatientDto patientDto)
-        {
-            try
-            {
-                Patient obj = _mapper.Map<Patient>(patientDto);
-                _db.patients.Add(obj);
-                _db.SaveChanges();
-
-                _response.Result = _mapper.Map<PatientDto>(obj);
-            }
-
-            catch (Exception ex)
-            {
-                _response.IsSuccess = false;
-                _response.Message = ex.Message;
-            }
-            return _response;
+//            catch (Exception ex)
+//            {
+//                _response.IsSuccess = false;
+//                _response.Message = ex.Message;
+//            }
+//            return _response;
 
 
-        }
-        [HttpPut]
-        public ResponseDto Update([FromBody] PatientDto patientDto)
-        {
-            try
-            {
-                Patient obj = _mapper.Map<Patient>(patientDto);
-                _db.patients.Update(obj);
-                _db.SaveChanges();
+//        }
+//        [HttpGet]
+//        [Route("GetByName/{name}")]
+//        public ResponseDto GetByName(string name)
+//        {
+//            try
+//            {
+//                Patient obj = _db.patient.First(u => u.PatientName.ToLower() == name.ToLower());
+//                _response.Result = _mapper.Map<PatientDto>(obj);
+//            }
 
-                _response.Result = _mapper.Map<PatientDto>(obj);
-            }
-
-            catch (Exception ex)
-            {
-                _response.IsSuccess = false;
-                _response.Message = ex.Message;
-            }
-            return _response;
+//            catch (Exception ex)
+//            {
+//                _response.IsSuccess = false;
+//                _response.Message = ex.Message;
+//            }
+//            return _response;
 
 
-        }
-        [HttpDelete]
-        [Route("{id:int}")]
-        public ResponseDto Delete(int id)
-        {
-            try
-            {
-                Patient obj = _db.patients.First(u=>u.PatientNumber==id);
-                _db.patients.Remove(obj);
-                _db.SaveChanges();
+//        }
+
+//        [HttpPost]       
+//        public ResponseDto Post([FromBody] PatientDto patientDto)
+//        {
+//            try
+//            {
+//                Patient obj = _mapper.Map<Patient>(patientDto);
+//                _db.patient.Add(obj);
+//                _db.SaveChanges();
+
+//                _response.Result = _mapper.Map<PatientDto>(obj);
+//            }
+
+//            catch (Exception ex)
+//            {
+//                _response.IsSuccess = false;
+//                _response.Message = ex.Message;
+//            }
+//            return _response;
+
+
+//        }
+//        [HttpPut]
+//        public ResponseDto Update([FromBody] PatientDto patientDto)
+//        {
+//            try
+//            {
+//                Patient obj = _mapper.Map<Patient>(patientDto);
+//                _db.patient.Update(obj);
+//                _db.SaveChanges();
+
+//                _response.Result = _mapper.Map<PatientDto>(obj);
+//            }
+
+//            catch (Exception ex)
+//            {
+//                _response.IsSuccess = false;
+//                _response.Message = ex.Message;
+//            }
+//            return _response;
+
+
+//        }
+//        [HttpDelete]
+//        [Route("{id:int}")]
+//        public ResponseDto Delete(int id)
+//        {
+//            try
+//            {
+//                Patient obj = _db.patient.First(u=>u.PatientNumber==id);
+//                _db.patient.Remove(obj);
+//                _db.SaveChanges();
 
                
-            }
+//            }
 
-            catch (Exception ex)
-            {
-                _response.IsSuccess = false;
-                _response.Message = ex.Message;
-            }
-            return _response;
+//            catch (Exception ex)
+//            {
+//                _response.IsSuccess = false;
+//                _response.Message = ex.Message;
+//            }
+//            return _response;
 
 
-        }
-    }
-}
+//        }
+//    }
+//}

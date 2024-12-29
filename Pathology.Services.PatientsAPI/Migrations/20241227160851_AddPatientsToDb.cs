@@ -3,7 +3,9 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Pathology.Services.PatientAPI.Migrations
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
+namespace Pathology.Services.PatientsAPI.Migrations
 {
     /// <inheritdoc />
     public partial class AddPatientsToDb : Migration
@@ -28,6 +30,15 @@ namespace Pathology.Services.PatientAPI.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_patients", x => x.PatientNumber);
+                });
+
+            migrationBuilder.InsertData(
+                table: "patients",
+                columns: new[] { "PatientNumber", "Age", "CreatedDate", "LabNumber", "PatientName", "RefNumber", "Sex", "TestType" },
+                values: new object[,]
+                {
+                    { 1, 10, new DateTime(2024, 12, 28, 2, 38, 50, 779, DateTimeKind.Local).AddTicks(1161), 2390, "Nimal", 1212, "male", "FBC" },
+                    { 2, 12, new DateTime(2024, 12, 28, 2, 38, 50, 779, DateTimeKind.Local).AddTicks(5606), 412, "Nimala", 1099, "Female", "Suger" }
                 });
         }
 

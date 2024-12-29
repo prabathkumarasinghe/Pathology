@@ -1,8 +1,8 @@
 ﻿
 using Pathology.Web.Utility;
-using Web.Web.Service.IService;
+using Web.Service.IService;
 
-namespace Web.Web.Service
+namespace Pathology.Web.Service
 {
     public class TokenProvider : ITokenProvider
     {

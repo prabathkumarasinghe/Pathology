@@ -1,4 +1,4 @@
-﻿namespace Web.Web.Service.IService
+﻿namespace Web.Service.IService
 {
     public interface ITokenProvider
     {

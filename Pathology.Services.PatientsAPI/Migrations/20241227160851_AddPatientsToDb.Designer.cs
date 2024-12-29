@@ -3,26 +3,29 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Pathology.Services.PatientAPI.Data;
+using Pathology.Services.PatientsAPI.Data;
 
 #nullable disable
 
-namespace Pathology.Services.PatientAPI.Migrations
+namespace Pathology.Services.PatientsAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241227160851_AddPatientsToDb")]
+    partial class AddPatientsToDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.8")
+                .HasAnnotation("ProductVersion", "9.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Pathology.Services.PatientAPI.Models.Patient", b =>
+            modelBuilder.Entity("Pathology.Services.PatientsAPI.Models.Patient", b =>
                 {
                     b.Property<int>("PatientNumber")
                         .ValueGeneratedOnAdd()
@@ -63,7 +66,7 @@ namespace Pathology.Services.PatientAPI.Migrations
                         {
                             PatientNumber = 1,
                             Age = 10,
-                            CreatedDate = new DateTime(2024, 12, 25, 20, 22, 7, 456, DateTimeKind.Local).AddTicks(5837),
+                            CreatedDate = new DateTime(2024, 12, 28, 2, 38, 50, 779, DateTimeKind.Local).AddTicks(1161),
                             LabNumber = 2390,
                             PatientName = "Nimal",
                             RefNumber = 1212,
@@ -74,7 +77,7 @@ namespace Pathology.Services.PatientAPI.Migrations
                         {
                             PatientNumber = 2,
                             Age = 12,
-                            CreatedDate = new DateTime(2024, 12, 25, 20, 22, 7, 456, DateTimeKind.Local).AddTicks(5908),
+                            CreatedDate = new DateTime(2024, 12, 28, 2, 38, 50, 779, DateTimeKind.Local).AddTicks(5606),
                             LabNumber = 412,
                             PatientName = "Nimala",
                             RefNumber = 1099,

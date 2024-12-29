@@ -1,4 +1,4 @@
-﻿namespace Pathology.Services.TestAPI.Models.Dto
+﻿namespace Pathology.Web.Models
 {
 	public class TestDto
 	{

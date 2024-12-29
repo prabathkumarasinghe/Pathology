@@ -8,7 +8,7 @@ using Pathology.Web.Service.IService;
 using Pathology.Web.Models;
 using Pathology.Web.Utility;
 using System.IdentityModel.Tokens.Jwt;
-using Web.Web.Service.IService;
+using Web.Service.IService;
 
 
 namespace Pathology.Web.Controllers

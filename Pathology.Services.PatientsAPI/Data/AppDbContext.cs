@@ -1,8 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Pathology.Services.PatientAPI.Models;
+using Pathology.Services.PatientsAPI.Models;
 
 
-namespace Pathology.Services.PatientAPI.Data
+
+
+
+namespace Pathology.Services.PatientsAPI.Data
 {
     public class AppDbContext : DbContext 
     {

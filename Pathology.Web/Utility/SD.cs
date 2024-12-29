@@ -4,6 +4,7 @@
     {
         public static string PatientAPIBase { get; set; }
         public static string AuthAPIBase { get; set; }
+        public static string TestAPIBase { get; set; }
 
         public const string RoleAdmin = "ADMIN";
         public const string RoleCustomer = "CUSTOMER";

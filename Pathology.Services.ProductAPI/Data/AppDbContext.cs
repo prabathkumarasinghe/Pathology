@@ -1,7 +1,7 @@
-﻿using Mango.Services.TestAPI.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Pathology.Services.TestAPI.Models;
 
-namespace Pathology.Services.PatientAPI.Data
+namespace Pathology.Services.TestAPI.Data
 {
     public class AppDbContext : DbContext 
     {

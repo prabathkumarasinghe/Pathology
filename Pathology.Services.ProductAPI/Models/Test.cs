@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Mango.Services.TestAPI.Models
+namespace Pathology.Services.TestAPI.Models
 {
 	public class Test
 	{
