@@ -2,7 +2,7 @@
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
-namespace Mango.Services.PatientAPI.Extension
+namespace Pathology.Services.PatientAPI.Extension
 {
     public static class WebApplicationBuilderExtensions
     {

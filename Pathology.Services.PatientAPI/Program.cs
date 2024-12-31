@@ -1,5 +1,5 @@
 using AutoMapper;
-using Mango.Services.PatientAPI.Extension;
+using Pathology.Services.PatientAPI.Extension;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;

@@ -42,7 +42,7 @@ namespace Pathology.Web.Controllers
 
                 if (response != null && response.IsSuccess)
                 {
-                    TempData["success"] = "Product created successfully";
+                    TempData["success"] = "Test created successfully";
                     return RedirectToAction(nameof(TestIndex));
                 }
                 else

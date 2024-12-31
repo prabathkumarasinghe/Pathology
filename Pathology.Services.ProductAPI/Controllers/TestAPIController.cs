@@ -27,7 +27,7 @@ namespace Pathology.Services.TestAPI.Controllers
         }
 
         [HttpGet]
-		[Authorize]
+//		[Authorize]
 		public ResponseDto Get()
         {
             try

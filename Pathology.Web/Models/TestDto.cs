@@ -1,4 +1,6 @@
-﻿namespace Pathology.Web.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Pathology.Web.Models
 {
 	public class TestDto
 	{
@@ -10,5 +12,7 @@
 		public string? ImageUrl { get; set; }
 		public string? ImageLocalPath { get; set; }
 		public IFormFile? Image { get; set; }
+		[Range(1,5)]
+		public int Count { get; set; } =	1;	
 	}
 }

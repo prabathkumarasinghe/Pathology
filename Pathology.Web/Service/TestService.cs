@@ -46,12 +46,12 @@ namespace Pathology.Web.Service
             });
         }
 
-        //public async Task<ResponseDto?> GetProductAsync(string productCode)
+        //public async Task<ResponseDto?> GetTestAsync(string testCode)
         //{
         //    return await _baseService.SendAsync(new RequestDto()
         //    {
         //        ApiType = SD.ApiType.GET,
-        //        Url = SD.ProductAPIBase + "/api/Product/GetByCode/" + productCode
+        //        Url = SD.TestAPIBase + "/api/Test/GetByCode/" + testCode
         //    });
         //}
 

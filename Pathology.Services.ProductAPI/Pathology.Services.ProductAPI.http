@@ -1,6 +1,6 @@
-@Pathology.Services.ProductAPI_HostAddress = http://localhost:5093
+# @Pathology.Services.ProductAPI_HostAddress = http://localhost:5093
 
-GET {{Pathology.Services.ProductAPI_HostAddress}}/weatherforecast/
-Accept: application/json
+# GET {{Pathology.Services.ProductAPI_HostAddress}}/weatherforecast/
+# Accept: application/json
 
-###
+# ###

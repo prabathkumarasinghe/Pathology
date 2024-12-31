@@ -20,7 +20,7 @@ namespace Pathology.Services.TestAPI.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Mango.Services.TestAPI.Models.Test", b =>
+            modelBuilder.Entity("Pathology.Services.TestAPI.Models.Test", b =>
                 {
                     b.Property<int>("TestId")
                         .ValueGeneratedOnAdd()
